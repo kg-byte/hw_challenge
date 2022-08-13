@@ -14,5 +14,12 @@ module Types
       Client.all 
     end
     
+    field :client_policies, [Types::PolicyType], null:false do 
+      argument :client_id, ID, required: true
+    end
+
+    def client_policies(client_id:)
+      Policy.where('client_id = ?', client_id.to_i)
+    end
   end
 end
