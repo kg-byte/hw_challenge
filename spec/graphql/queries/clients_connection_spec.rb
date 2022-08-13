@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Types::QueryType do
   describe 'clients_connection' do
-    it "returns first 50 clients with required attributes by default" do
-      FactoryBot.create_list(:client, 60)
+    it "returns first 20 clients with required attributes by default" do
+      FactoryBot.create_list(:client, 30)
       results = HwChallengeSchema.execute(query_1).as_json
 
-      expect(results['data']['clientsConnection']['edges'].count).to eq(50)
+      expect(results['data']['clientsConnection']['edges'].count).to eq(20)
       results['data']['clientsConnection']['edges'].each do |datum|
         expect(datum['node']).to have_key('id')
         expect(datum['node']).to have_key('sourceId')

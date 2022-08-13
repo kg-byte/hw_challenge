@@ -21,5 +21,12 @@ module Types
     def client_policies(client_id:)
       Policy.where('client_id = ?', client_id.to_i)
     end
+
+    field :app_data, Types::AppDataType, null:false
+
+    def app_data
+      AppDatum
+    end
+
   end
 end
