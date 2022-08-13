@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :client do
     source_id { (0..5).to_a.sample }
-    name { ['ABC insurance', 'XYZ Insurance', 'Progressive'].sample }
+    name { ['Avery', 'Coors', 'Locavore'].sample }
     address { ['123 st', '999 ave', '2nd ave'].sample }
     city { ['Denver', 'NY City', 'Los Angles'].sample}
     state { ['CO', 'NY', 'CA'].sample}
